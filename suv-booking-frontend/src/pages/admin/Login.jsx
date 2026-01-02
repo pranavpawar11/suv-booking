@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { FiMail, FiLock, FiEye, FiEyeOff } from 'react-icons/fi';
 import Loader from '../../components/common/Loader';
@@ -172,9 +172,15 @@ const Login = () => {
           </form>
 
           {/* Demo Credentials */}
-          <div className="mt-6 pt-6 border-t border-gray-200">
-            <p className="text-xs text-gray-500 text-center">
-              Demo Credentials: Create an admin user in your database
+          <div className="mt-6 text-center">
+            <p className="text-sm text-gray-600">
+              Are you an User?{' '}
+              <Link
+                to="/login"
+                className="font-semibold text-purple-600 hover:text-purple-700 transition-colors"
+              >
+                User Login
+              </Link>
             </p>
           </div>
         </div>
