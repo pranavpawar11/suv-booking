@@ -32,7 +32,10 @@ exports.createBooking = asyncHandler(async (req, res) => {
   }
 
   // Get route information
-  const routeInfo = await geoService.getCompleteRouteInfo(pickupAddress, dropAddress);
+  const routeInfo = await geoService.getCompleteRouteInfo(
+    pickupAddress,
+    dropAddress
+  );
 
   // Calculate pricing
   const pricing = paymentService.calculateFare(
@@ -41,7 +44,7 @@ exports.createBooking = asyncHandler(async (req, res) => {
     car.baseRate
   );
 
-  // Create booking
+  // Create booking (bookingId will be auto-generated in model)
   const booking = await Booking.create({
     user: req.user._id,
     car: carId,
@@ -73,7 +76,7 @@ exports.createBooking = asyncHandler(async (req, res) => {
       duration: routeInfo.route.duration
     },
     notes: {
-      userNotes: notes
+      userNotes: notes || ''
     }
   });
 
@@ -83,9 +86,14 @@ exports.createBooking = asyncHandler(async (req, res) => {
     .populate('user', 'name email phone');
 
   res.status(201).json(
-    new ApiResponse(201, { booking: populatedBooking }, 'Booking created successfully')
+    new ApiResponse(
+      201,
+      { booking: populatedBooking },
+      'Booking created successfully'
+    )
   );
 });
+
 
 // @desc    Get all bookings (Admin)
 // @route   GET /api/v1/bookings

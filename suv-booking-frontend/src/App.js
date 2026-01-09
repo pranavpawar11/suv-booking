@@ -17,7 +17,7 @@ import AddDriver from './pages/admin/Drivers/AddDriver';
 import EditDriver from './pages/admin/Drivers/EditDriver';
 import DriverDetails from './pages/admin/Drivers/DriverDetails';
 import BookingsList from './pages/admin/Bookings/BookingsList';
-import BookingDetails from './pages/admin/Bookings/BookingDetails';
+import AdminBookingDetails from './pages/admin/Bookings/BookingDetails';
 import ActiveBookings from './pages/admin/Bookings/ActiveBookings';
 import PaymentsList from './pages/admin/Payments/PaymentsList';
 import PaymentDetails from './pages/admin/Payments/PaymentDetails';
@@ -31,6 +31,16 @@ import Register from './pages/auth/Register';
 
 // User Pages
 import Home from './pages/user/Home/Home';
+import BrowseCars from './pages/user/BrowseCars/BrowseCars';
+import CarDetails from './pages/user/BrowseCars/CarDetails';
+import CreateBooking from './pages/user/Booking/CreateBooking';
+import BookingSuccess from './pages/user/Booking/BookingSuccess';
+import MyBookings from './pages/user/MyBookings/MyBookings';
+import UserBookingDetails from './pages/user/MyBookings/BookingDetails';
+import Profile from './pages/user/Profile/Profile';
+import PaymentPage from './pages/user/Payment/PaymentPage';
+import PaymentSuccess from './pages/user/Payment/PaymentSuccess';
+import LiveTracking from './pages/user/LiveTracking/LiveTracking';
 
 function App() {
   return (
@@ -54,10 +64,16 @@ function App() {
             }
           >
             <Route index element={<Home />} />
-            {/* More user routes will be added here */}
-            {/* <Route path="browse-cars" element={<BrowseCars />} /> */}
-            {/* <Route path="my-bookings" element={<MyBookings />} /> */}
-            {/* <Route path="profile" element={<Profile />} /> */}
+            <Route path="browse-cars" element={<BrowseCars />} />
+            <Route path="cars/:id" element={<CarDetails />} />
+            <Route path="create-booking" element={<CreateBooking />} />
+            <Route path="payment" element={<PaymentPage />} />
+            <Route path="booking-success" element={<BookingSuccess />} />
+            <Route path="payment-success" element={<PaymentSuccess />} />
+            <Route path="my-bookings" element={<MyBookings />} />
+            <Route path="booking-details/:id" element={<UserBookingDetails />} />
+            <Route path="track-live/:id" element={<LiveTracking />} />
+            <Route path="profile" element={<Profile />} />
           </Route>
 
           {/* Admin Protected Routes */}
@@ -80,7 +96,7 @@ function App() {
             <Route path="drivers/:id" element={<DriverDetails />} />
             <Route path="bookings" element={<BookingsList />} />
             <Route path="bookings/active" element={<ActiveBookings />} />
-            <Route path="bookings/:id" element={<BookingDetails />} />
+            <Route path="bookings/:id" element={<AdminBookingDetails />} />
             <Route path="payments" element={<PaymentsList />} />
             <Route path="payments/:id" element={<PaymentDetails />} />
             <Route path="users" element={<UsersList />} />

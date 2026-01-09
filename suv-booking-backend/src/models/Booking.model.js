@@ -235,15 +235,19 @@ const bookingSchema = new mongoose.Schema({
 });
 
 // Generate unique booking ID before saving
-bookingSchema.pre('save', async function(next) {
+bookingSchema.pre('validate', function () {
   if (this.isNew && !this.bookingId) {
     const prefix = 'BKG';
     const timestamp = Date.now().toString().slice(-8);
-    const random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+    const random = Math.floor(Math.random() * 1000)
+      .toString()
+      .padStart(3, '0');
+
     this.bookingId = `${prefix}${timestamp}${random}`;
   }
-  next();
 });
+
+
 
 // Indexes for performance
 // bookingSchema.index({ bookingId: 1 });

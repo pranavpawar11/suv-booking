@@ -98,15 +98,18 @@ const paymentSchema = new mongoose.Schema({
 });
 
 // Generate unique payment ID before saving
-paymentSchema.pre('save', async function(next) {
+paymentSchema.pre('validate', function () {
   if (this.isNew && !this.paymentId) {
     const prefix = 'PAY';
     const timestamp = Date.now().toString().slice(-8);
-    const random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+    const random = Math.floor(Math.random() * 1000)
+      .toString()
+      .padStart(3, '0');
+
     this.paymentId = `${prefix}${timestamp}${random}`;
   }
-  next();
 });
+
 
 // Indexes for performance
 // paymentSchema.index({ paymentId: 1 });
