@@ -4,7 +4,6 @@ import {
   FiArrowLeft,
   FiUsers,
   FiPackage,
-  FiTruck,
   FiShield,
   FiStar,
   FiCalendar,
@@ -18,6 +17,7 @@ import {
   FiMail,
   FiAward
 } from 'react-icons/fi';
+import { FaCar} from 'react-icons/fa';
 import carService from '../../../api/services/carService';
 import Loader from '../../../components/common/Loader';
 import toast from 'react-hot-toast';
@@ -117,7 +117,7 @@ const CarDetails = () => {
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center">
-                    <FiTruck className="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 text-gray-400" />
+                    <FaCar className="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 text-gray-400" />
                   </div>
                 )}
                 <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-blue-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold text-xs sm:text-sm shadow-lg">
@@ -195,7 +195,7 @@ const CarDetails = () => {
                   <p className="text-[10px] xs:text-xs text-gray-600">Per KM</p>
                 </div>
                 <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center border border-orange-200">
-                  <FiTruck className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600 mx-auto mb-1 sm:mb-2" />
+                  <FaCar className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600 mx-auto mb-1 sm:mb-2" />
                   <p className="text-xl sm:text-2xl font-bold text-gray-900">{car.fuelType || 'Diesel'}</p>
                   <p className="text-[10px] xs:text-xs text-gray-600">Fuel Type</p>
                 </div>
@@ -205,7 +205,7 @@ const CarDetails = () => {
               {car.description && (
                 <div className="mb-4 sm:mb-6 pb-4 sm:pb-6 border-b border-gray-200">
                   <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 flex items-center">
-                    <FiTruck className="w-5 h-5 mr-2 text-blue-600" />
+                    <FaCar className="w-5 h-5 mr-2 text-blue-600" />
                     About this Vehicle
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{car.description}</p>

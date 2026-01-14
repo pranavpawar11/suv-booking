@@ -7,10 +7,10 @@ import {
   FiCreditCard,
   FiLock,
   FiMapPin,
-  FiTruck,
   FiNavigation,
   FiPhone
 } from 'react-icons/fi';
+import { FaCar} from 'react-icons/fa';
 import { BiRupee } from 'react-icons/bi';
 import paymentService from '../../../api/services/paymentService';
 import Loader from '../../../components/common/Loader';
@@ -172,7 +172,7 @@ const PaymentPage = () => {
             <div className="bg-white rounded-xl sm:rounded-2xl shadow-md p-4 sm:p-5 lg:p-6">
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 flex items-center">
                 <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-2">
-                  <FiTruck className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
+                  <FaCar className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
                 </div>
                 Booking Summary
               </h3>

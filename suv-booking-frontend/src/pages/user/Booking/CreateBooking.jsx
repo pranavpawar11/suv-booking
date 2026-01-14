@@ -8,10 +8,10 @@ import {
   FiCheckCircle,
   FiArrowRight,
   FiArrowLeft,
-  FiTruck,
   FiDollarSign,
   FiFileText
 } from 'react-icons/fi';
+import { FaCar} from 'react-icons/fa';
 import bookingService from '../../../api/services/bookingService';
 import Loader from '../../../components/common/Loader';
 import toast from 'react-hot-toast';
@@ -34,6 +34,13 @@ const CreateBooking = () => {
   // Navigation is a side-effect → useEffect
   useEffect(() => {
     if (!car || !searchData || !routeInfo) {
+      navigate('/browse-cars', { replace: true });
+      return;
+    }
+
+    // CRITICAL VALIDATION: Check if car has enough seats for passengers
+    if (car.seatingCapacity < searchData.passengers) {
+      toast.error(`This vehicle has only ${car.seatingCapacity} seats but you selected ${searchData.passengers} passengers. Please go back and select a different vehicle.`);
       navigate('/browse-cars', { replace: true });
     }
   }, [car, searchData, routeInfo, navigate]);
@@ -207,7 +214,7 @@ const CreateBooking = () => {
                 {/* Selected Car */}
                 <div className="bg-white rounded-2xl shadow-lg p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                    <FiTruck className="mr-2 text-blue-600" />
+                    <FaCar className="mr-2 text-blue-600" />
                     Selected Vehicle
                   </h3>
                   <div className="flex items-center space-x-4">
@@ -215,7 +222,7 @@ const CreateBooking = () => {
                       {car.primaryImage ? (
                         <img src={car.primaryImage} alt={car.name} className="w-full h-full object-cover" />
                       ) : (
-                        <FiTruck className="w-12 h-12 text-gray-400" />
+                        <FaCar className="w-12 h-12 text-gray-400" />
                       )}
                     </div>
                     <div className="flex-1">

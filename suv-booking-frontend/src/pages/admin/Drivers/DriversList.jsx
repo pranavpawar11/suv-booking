@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FiPlus, FiEdit, FiTrash2, FiSearch, FiTruck, FiEye } from 'react-icons/fi';
+import { FiPlus, FiEdit, FiTrash2, FiSearch,  FiEye } from 'react-icons/fi';
+import { FaCar} from 'react-icons/fa';
 import driverService from '../../../api/services/driverService';
 import Loader from '../../../components/common/Loader';
 import toast from 'react-hot-toast';
@@ -105,7 +106,7 @@ const DriversList = () => {
               <p className="text-2xl font-bold text-gray-900">{drivers.length}</p>
             </div>
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-              <FiTruck className="text-blue-600 text-xl" />
+              <FaCar className="text-blue-600 text-xl" />
             </div>
           </div>
         </div>
@@ -147,7 +148,7 @@ const DriversList = () => {
               </p>
             </div>
             <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-              <FiTruck className="text-purple-600 text-xl" />
+              <FaCar className="text-purple-600 text-xl" />
             </div>
           </div>
         </div>
@@ -246,7 +247,7 @@ const DriversList = () => {
                 {driver.assignedCar ? (
                   <div className="mt-3 p-3 bg-blue-50 rounded-lg">
                     <div className="flex items-center text-sm">
-                      <FiTruck className="text-blue-600 mr-2" />
+                      <FaCar className="text-blue-600 mr-2" />
                       <div>
                         <p className="text-blue-900 font-medium">
                           {driver.assignedCar.name}

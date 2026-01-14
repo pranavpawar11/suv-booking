@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { 
   FiCalendar, 
   FiMapPin, 
-  FiTruck,
   FiClock,
   FiDollarSign,
   FiEye,
@@ -14,6 +13,7 @@ import {
   FiNavigation,
   FiUsers
 } from 'react-icons/fi';
+import { FaCar} from 'react-icons/fa';
 import bookingService from '../../../api/services/bookingService';
 import Loader from '../../../components/common/Loader';
 import toast from 'react-hot-toast';
@@ -94,7 +94,7 @@ const MyBookings = () => {
     const statusConfig = {
       pending: { color: 'yellow', icon: FiClock, text: 'Pending' },
       advance_paid: { color: 'blue', icon: FiDollarSign, text: 'Advance Paid' },
-      driver_assigned: { color: 'purple', icon: FiTruck, text: 'Driver Assigned' },
+      driver_assigned: { color: 'purple', icon: FaCar, text: 'Driver Assigned' },
       confirmed: { color: 'green', icon: FiCheckCircle, text: 'Confirmed' },
       started: { color: 'blue', icon: FiRefreshCw, text: 'In Progress' },
       completed: { color: 'green', icon: FiCheckCircle, text: 'Completed' },
@@ -326,7 +326,7 @@ const MyBookings = () => {
                       <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-3 sm:p-4 border border-blue-100">
                         <div className="flex items-center mb-2">
                           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
-                            <FiTruck className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                            <FaCar className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                           </div>
                           <div className="flex-1 min-w-0">
                             <p className="text-[10px] xs:text-xs text-gray-600 mb-0.5">Vehicle</p>

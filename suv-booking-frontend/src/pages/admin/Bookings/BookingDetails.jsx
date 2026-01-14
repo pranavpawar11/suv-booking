@@ -5,13 +5,13 @@ import {
   FiMapPin,
   FiCalendar,
   FiUser,
-  FiTruck,
   FiDollarSign,
   FiPhone,
   FiClock,
   FiCheckCircle,
   FiXCircle,
 } from 'react-icons/fi';
+import { FaCar} from 'react-icons/fa';
 import bookingService from '../../../api/services/bookingService';
 import driverService from '../../../api/services/driverService';
 import Loader from '../../../components/common/Loader';
@@ -348,7 +348,7 @@ const BookingDetails = () => {
               {/* Car */}
               <div className="p-4 bg-blue-50 rounded-lg">
                 <div className="flex items-center">
-                  <FiTruck className="text-blue-600 mr-3 text-xl" />
+                  <FaCar className="text-blue-600 mr-3 text-xl" />
                   <div className="flex-1">
                     <p className="text-sm text-blue-600">Car</p>
                     <p className="font-semibold text-blue-900">{booking.car?.name}</p>

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { FiTruck, FiUsers, FiCalendar, FiDollarSign, FiTrendingUp } from 'react-icons/fi';
+import {  FiUsers, FiCalendar, FiDollarSign, FiTrendingUp } from 'react-icons/fi';
 import carService from '../../api/services/carService';
 import driverService from '../../api/services/driverService';
 import bookingService from '../../api/services/bookingService';
 import Loader from '../../components/common/Loader';
-
+import { FaCar} from 'react-icons/fa';
 const Dashboard = () => {
   const [stats, setStats] = useState({
     totalCars: 0,
@@ -62,7 +62,7 @@ const Dashboard = () => {
       title: 'Total Cars',
       value: stats.totalCars,
       subtitle: `${stats.availableCars} available`,
-      icon: FiTruck,
+      icon: FaCar,
       color: 'bg-blue-500',
     },
     {

@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { 
   FiArrowLeft,
   FiMapPin, 
-  FiTruck,
   FiUser,
   FiPhone,
   FiClock,
@@ -16,6 +15,7 @@ import {
   FiUsers,
   FiActivity
 } from 'react-icons/fi';
+import { FaCar} from 'react-icons/fa';
 
 import bookingService from '../../../api/services/bookingService';
 import paymentService from '../../../api/services/paymentService';
@@ -267,7 +267,7 @@ const BookingDetails = () => {
             <div className="bg-white rounded-xl sm:rounded-2xl shadow-md p-4 sm:p-5 lg:p-6">
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 flex items-center">
                 <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-2">
-                  <FiTruck className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
+                  <FaCar className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
                 </div>
                 Vehicle Details
               </h3>
@@ -280,7 +280,7 @@ const BookingDetails = () => {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <FiTruck className="w-10 h-10 sm:w-12 sm:h-12 text-gray-400" />
+                    <FaCar className="w-10 h-10 sm:w-12 sm:h-12 text-gray-400" />
                   )}
                 </div>
                 <div className="flex-1 min-w-0">

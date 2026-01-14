@@ -3,7 +3,6 @@ import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import {
   FiHome,
-  FiTruck,
   FiUsers,
   FiCalendar,
   FiCreditCard,
@@ -12,6 +11,7 @@ import {
   FiMenu,
   FiX,
 } from 'react-icons/fi';
+import { FaCar} from 'react-icons/fa';
 
 const AdminLayout = () => {
   const { user, logout } = useAuth();
@@ -25,7 +25,7 @@ const AdminLayout = () => {
 
   const menuItems = [
     { path: '/admin/dashboard', icon: FiHome, label: 'Dashboard' },
-    { path: '/admin/cars', icon: FiTruck, label: 'Cars' },
+    { path: '/admin/cars', icon: FaCar, label: 'Cars' },
     { path: '/admin/drivers', icon: FiUsers, label: 'Drivers' },
     { path: '/admin/bookings', icon: FiCalendar, label: 'Bookings' },
     { path: '/admin/payments', icon: FiCreditCard, label: 'Payments' },

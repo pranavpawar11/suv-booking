@@ -6,7 +6,6 @@ import {
   FiSearch, 
   FiMapPin, 
   FiCalendar, 
-  FiTruck, 
   FiShield, 
   FiClock,
   FiUsers,
@@ -16,6 +15,7 @@ import {
   FiAward,
   FiZap
 } from 'react-icons/fi';
+import { FaCar} from 'react-icons/fa';
 import Loader from '../../../components/common/Loader';
 
 const Home = () => {
@@ -34,7 +34,7 @@ const Home = () => {
 
   const features = [
     {
-      icon: FiTruck,
+      icon: FaCar,
       title: 'Wide Range of SUVs',
       description: 'Choose from luxury to budget-friendly options',
       color: 'blue',
@@ -65,7 +65,7 @@ const Home = () => {
 
   const stats = [
     { label: 'Happy Customers', value: '10,000+', icon: FiUsers, color: 'blue' },
-    { label: 'SUVs Available', value: '500+', icon: FiTruck, color: 'purple' },
+    { label: 'SUVs Available', value: '500+', icon: FaCar, color: 'purple' },
     { label: 'Average Rating', value: '4.8', icon: FiStar, color: 'yellow' },
     { label: 'Cities Covered', value: '50+', icon: FiMapPin, color: 'green' }
   ];

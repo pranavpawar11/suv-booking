@@ -4,11 +4,11 @@ import {
   FiCheckCircle, 
   FiMapPin, 
   FiCalendar, 
-  FiTruck,
   FiDollarSign,
   FiHome,
   FiFileText
 } from 'react-icons/fi';
+import { FaCar} from 'react-icons/fa';
 
 const BookingSuccess = () => {
   const navigate = useNavigate();
@@ -103,7 +103,7 @@ const BookingSuccess = () => {
           {/* Vehicle Details */}
           <div className="p-6 border-b">
             <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-              <FiTruck className="mr-2 text-blue-600" />
+              <FaCar className="mr-2 text-blue-600" />
               Vehicle Details
             </h3>
             <div className="flex items-center space-x-4">
@@ -115,7 +115,7 @@ const BookingSuccess = () => {
                     className="w-full h-full object-cover rounded-lg"
                   />
                 ) : (
-                  <FiTruck className="w-10 h-10 text-gray-400" />
+                  <FaCar className="w-10 h-10 text-gray-400" />
                 )}
               </div>
               <div className="flex-1">

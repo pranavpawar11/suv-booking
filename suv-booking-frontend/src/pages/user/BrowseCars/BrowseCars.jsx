@@ -10,13 +10,13 @@ import {
   FiMapPin,
   FiCalendar,
   FiArrowRight,
-  FiTruck,
   FiNavigation,
   FiClock,
   FiCheckCircle,
   FiChevronDown,
   FiChevronUp
 } from 'react-icons/fi';
+import { FaCar} from 'react-icons/fa';
 import carService from '../../../api/services/carService';
 import LocationInput from '../../../components/common/LocationInput';
 import Loader from '../../../components/common/Loader';
@@ -113,8 +113,11 @@ const BrowseCars = () => {
     }
   };
 
-  const applyFilters = () => {
+const applyFilters = () => {
     let filtered = [...cars];
+
+    // CRITICAL: Filter by passenger count first - cars must have enough seats
+    filtered = filtered.filter(car => car.seatingCapacity >= searchData.passengers);
 
     // Filter by vehicle type
     if (filters.vehicleType !== 'all') {
@@ -388,7 +391,7 @@ const BrowseCars = () => {
                 {/* Vehicle Type */}
                 <div>
                   <label className="block text-[10px] xs:text-xs font-semibold text-gray-600 mb-1.5 ml-1 flex items-center">
-                    <FiTruck className="w-3.5 h-3.5 mr-1 text-blue-600" />
+                    <FaCar className="w-3.5 h-3.5 mr-1 text-blue-600" />
                     Vehicle Type
                   </label>
                   <select
@@ -462,7 +465,7 @@ const BrowseCars = () => {
         {filteredCars.length === 0 ? (
           <div className="bg-white rounded-2xl shadow-lg p-8 sm:p-12 text-center">
             <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <FiTruck className="w-8 h-8 sm:w-10 sm:h-10 text-gray-400" />
+              <FaCar className="w-8 h-8 sm:w-10 sm:h-10 text-gray-400" />
             </div>
             <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">No cars available</h3>
             <p className="text-sm sm:text-base text-gray-600 mb-6">Try adjusting your filters or search criteria</p>
@@ -500,7 +503,7 @@ const BrowseCars = () => {
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
-                        <FiTruck className="w-16 h-16 sm:w-20 sm:h-20 text-gray-400" />
+                        <FaCar className="w-16 h-16 sm:w-20 sm:h-20 text-gray-400" />
                       </div>
                     )}
                     <div className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-white px-2.5 sm:px-3 py-1 rounded-full text-[10px] xs:text-xs sm:text-sm font-semibold text-blue-600 shadow-md">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { FiArrowLeft, FiSave, FiTruck } from 'react-icons/fi';
+import { FiArrowLeft, FiSave } from 'react-icons/fi';
+import { FaCar} from 'react-icons/fa';
 import driverService from '../../../api/services/driverService';
 import carService from '../../../api/services/carService';
 import Loader from '../../../components/common/Loader';
@@ -390,7 +391,7 @@ const EditDriver = () => {
         {/* Car Assignment */}
         <div className="bg-white rounded-xl shadow-sm p-6">
           <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-            <FiTruck className="mr-2" />
+            <FaCar className="mr-2" />
             Car Assignment
           </h2>
           <div className="flex gap-4">

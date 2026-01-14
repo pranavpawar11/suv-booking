@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { FiArrowLeft, FiEdit, FiTruck, FiMapPin, FiCalendar, FiPhone, FiMail, FiCreditCard } from 'react-icons/fi';
+import { FiArrowLeft, FiEdit,  FiMapPin, FiCalendar, FiPhone, FiMail, FiCreditCard } from 'react-icons/fi';
+import { FaCar} from 'react-icons/fa';
 import driverService from '../../../api/services/driverService';
 import Loader from '../../../components/common/Loader';
 import toast from 'react-hot-toast';
@@ -219,7 +220,7 @@ const DriverDetails = () => {
         {/* Assigned Car */}
         <div className="bg-white rounded-xl shadow-sm p-6">
           <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-            <FiTruck className="mr-2" />
+            <FaCar className="mr-2" />
             Assigned Car
           </h2>
           {driver.assignedCar ? (
@@ -248,7 +249,7 @@ const DriverDetails = () => {
             </div>
           ) : (
             <div className="border border-dashed border-gray-300 rounded-lg p-6 text-center">
-              <FiTruck className="mx-auto text-gray-400 text-3xl mb-2" />
+              <FaCar className="mx-auto text-gray-400 text-3xl mb-2" />
               <p className="text-gray-600">No car assigned</p>
               <button
                 onClick={() => navigate(`/admin/drivers/edit/${id}`)}

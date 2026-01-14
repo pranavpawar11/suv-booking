@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FiEye, FiMapPin, FiClock, FiUser, FiTruck, FiRefreshCw } from 'react-icons/fi';
+import { FiEye, FiMapPin, FiClock, FiUser,  FiRefreshCw } from 'react-icons/fi';
+import { FaCar} from 'react-icons/fa';
 import bookingService from '../../../api/services/bookingService';
 import Loader from '../../../components/common/Loader';
 import toast from 'react-hot-toast';
@@ -196,7 +197,7 @@ const ActiveBookings = () => {
                   <div className="grid grid-cols-2 gap-3">
                     <div className="flex items-center">
                       <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-2">
-                        <FiTruck className="text-blue-600" />
+                        <FaCar className="text-blue-600" />
                       </div>
                       <div>
                         <p className="text-xs text-gray-600">Car</p>
