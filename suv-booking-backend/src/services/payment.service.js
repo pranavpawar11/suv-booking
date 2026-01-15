@@ -224,7 +224,7 @@ class PaymentService {
       const refund = await razorpayInstance.payments.refund(
         payment.razorpay.paymentId,
         {
-          amount: Math.round(amount * 100), // Amount in paise
+          amount: amount, // Amount in paise
           notes: {
             reason: reason
           }

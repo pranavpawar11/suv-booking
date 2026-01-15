@@ -11,7 +11,7 @@ import {
   FiChevronDown,
 } from 'react-icons/fi';
 import { FaCar } from 'react-icons/fa';
-
+import SUVBookingChatbot from '../components/common/SUVBookingChatbot';
 const UserLayout = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -304,6 +304,8 @@ const UserLayout = () => {
           ))}
         </div>
       </div>
+
+      <SUVBookingChatbot />
     </div>
   );
 };

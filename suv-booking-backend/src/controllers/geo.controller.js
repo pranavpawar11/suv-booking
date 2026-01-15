@@ -122,7 +122,8 @@ exports.getFareEstimation = asyncHandler(async (req, res) => {
         vehicleType: car.vehicleType,
         primaryImage: car.primaryImage,
         seatingCapacity: car.seatingCapacity,
-        features: car.features
+        features: car.features,
+        ratePerKm: car.ratePerKm
       },
       pricing: fare
     };
