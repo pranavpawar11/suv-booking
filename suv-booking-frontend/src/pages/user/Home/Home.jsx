@@ -333,13 +333,13 @@ const Home = () => {
               <div
                 key={index}
                 className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group transform hover:-translate-y-1"
-                onClick={() => navigate('/browse-cars', { 
-                  state: { 
-                    pickup: { address: route.fromFull, lat: null, lng: null }, 
-                    drop: { address: route.toFull, lat: null, lng: null },
-                    date: ''
-                  } 
-                })}
+                // onClick={() => navigate('/browse-cars', { 
+                //   state: { 
+                //     pickup: { address: route.fromFull, lat: null, lng: null }, 
+                //     drop: { address: route.toFull, lat: null, lng: null },
+                //     date: ''
+                //   } 
+                // })}
               >
                 <div className="flex items-start justify-between mb-3 sm:mb-4">
                   <div className="flex-1 min-w-0">

@@ -5,6 +5,7 @@ const app = require('./app');
 const connectDB = require('./config/database');
 const { validateRazorpayConfig } = require('./config/razorpay');
 const setupSocketIO = require('./sockets/tracking.socket');
+const { seedDefaultAdmin } = require('./utils/seedAdmin');
 
 // Handle uncaught exceptions
 process.on('uncaughtException', (error) => {
@@ -19,6 +20,11 @@ connectDB();
 
 // Validate Razorpay configuration
 validateRazorpayConfig();
+
+// Seed default admin user (runs after DB connection)
+setTimeout(() => {
+  seedDefaultAdmin();
+}, 2000); // Wait 2 seconds for DB connection to establish
 
 // Create HTTP server
 const server = http.createServer(app);
